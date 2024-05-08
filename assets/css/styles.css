@@ -1,0 +1,351 @@
+@font-face {
+  font-family: "metropolis";
+  src: url("../fonts/metropolisSemiBold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: "metropolis";
+  src: url("../fonts/metropolisRegular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+}
+/**
+* Characters to escape from SVGs
+* Source: https://github.com/Threespot/frontline-sass/blob/master/src/variables/_escape-chars.scss
+*/
+/**
+ * Helper to get URL-escaped inline SVG code
+ */
+:root {
+  --svg-letter-h: url("data:image/svg+xml, %3Csvg%20xmlns=%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox=%270%200%20170%20226%27%20fill=%27none%27%3E%3Cpath%20d=%27M112.722%2058.1653C151.407%2058.1653%20169.656%2080.7526%20169.656%20119.438V225.276H108.061V126.859C108.061%20113.235%20100.962%20103.663%2087.3377%20103.663C71.8493%20103.663%2061.667%20115.422%2061.667%20129.333V225.24H0.0717773V0.908203H61.667V78.8882C74.6458%2065.9095%2093.2176%2058.1653%20112.722%2058.1653Z%27%20fill=%27white%27%2F%3E%3C%2Fsvg%3E ");
+  --svg-letter-i: url("data:image/svg+xml, %3Csvg%20xmlns=%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox=%270%200%2062%20226%27%20fill=%27none%27%3E%3Cpath%20d=%27M0.108398%2042.6768V0.908203H61.7037V42.6768H0.108398ZM0.108398%20225.24V61.8581H61.7037V225.24H0.108398Z%27%20fill=%27white%27%2F%3E%3C%2Fsvg%3E ");
+  --svg-rosse-symbol: url("data:image/svg+xml, %3Csvg%20xmlns=%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%20viewBox=%270%200%20163%20147%27%20fill=%27none%27%3E%3Cg%20clip-path=%27url%28%23clip0_89_5184%29%27%3E%3Cpath%20d=%27M44.7936%20101.051C39.4092%20105.292%2035.76%20109.592%2033.4684%20112.487C33.3844%20117.8%2035.3437%20122.773%2038.9928%20126.495C42.7679%20130.346%2048.0054%20132.554%2053.3549%20132.554C64.4072%20132.526%2073.4023%20123.544%2073.4023%20112.529C73.4023%2098.5701%2072.7691%2094.9989%2072.3947%2094.1123L72.3073%2093.8775C71.8209%2092.4125%2069.4208%2089.5353%2066.0866%2089.5353C63.2492%2089.5353%2055.9719%2092.5527%2044.7936%20101.048%27%20fill=%27white%27%2F%3E%3Cpath%20d=%27M95.2931%200C77.2539%200.0455597%2062.5664%2014.7088%2062.5664%2032.6908C62.5664%2055.4812%2063.5985%2061.3058%2064.2143%2062.7532L64.3612%2063.1387C65.1589%2065.5323%2069.0704%2070.225%2074.5144%2070.225C79.1466%2070.225%2091.0282%2065.301%20109.277%2051.4298C118.069%2044.5083%20124.028%2037.4851%20127.764%2032.7609C127.904%2024.087%20124.703%2015.9704%20118.745%209.89346C112.573%203.60622%20104.029%200%2095.2931%200Z%27%20fill=%27white%27%2F%3E%3Cpath%20d=%27M57.046%2075.6711C57.046%2071.8966%2053.047%2062.2134%2041.7777%2047.3365C36.1554%2040.1696%2030.449%2035.3157%2026.611%2032.2702C26.464%2032.2702%2026.3171%2032.2667%2026.1701%2032.2667C19.2917%2032.2667%2012.8681%2034.8671%208.03297%2039.6229C2.92839%2044.6449%200%2051.6086%200%2058.7299C0.0349868%2073.4351%2011.948%2085.4068%2026.555%2085.4068C45.0665%2085.4068%2049.8037%2084.5657%2050.9758%2084.0645L51.2906%2083.9454C53.2359%2083.297%2057.046%2080.1079%2057.046%2075.6711Z%27%20fill=%27white%27%2F%3E%3Cpath%20d=%27M126.579%2074.1185C101.192%2074.1185%2094.6989%2075.2715%2093.0861%2075.9584L92.6557%2076.1232C89.9897%2077.0133%2084.7627%2081.387%2084.7627%2087.471C84.7627%2092.6473%2090.2486%20105.93%20105.702%20126.33C113.417%20136.16%20121.24%20142.819%20126.502%20146.996C136.176%20147.158%20145.206%20143.572%20151.979%20136.914C158.98%20130.024%20162.997%20120.47%20162.997%20110.703C162.948%2090.5375%20146.609%2074.1185%20126.575%2074.1185%27%20fill=%27white%27%2F%3E%3C%2Fg%3E%3Cdefs%3E%3CclipPath%20id=%27clip0_89_5184%27%3E%3Crect%20width=%27163%27%20height=%27147%27%20fill=%27white%27%2F%3E%3C%2FclipPath%3E%3C%2Fdefs%3E%3C%2Fsvg%3E ");
+  --svg-ayesa-logo: url("data:image/svg+xml, %3Csvg%20width=%27359%27%20height=%2765%27%20viewBox=%270%200%20359%2065%27%20fill=%27none%27%20xmlns=%27http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%27%3E%3Cpath%20d=%27M134.44%2053.54V25.24C134.44%2013.55%20123.03%203.67999%20109.53%203.67999C96.0302%203.67999%2084.1602%2014.63%2084.1602%2028.1C84.1602%2040.67%2085.9102%2046.74%2090.6102%2050.5C95.8102%2054.68%20103.93%2057.86%20120.75%2045.34L123.57%2043.24V53.55H134.43L134.44%2053.54ZM116.11%2036.75C109.81%2041.53%20104.36%2044.39%20101.51%2044.39C98.5002%2044.39%2096.2902%2041.97%2095.7502%2040.33C95.2002%2039.07%2094.9602%2035.36%2094.9602%2027.99C94.9602%2019.99%20101.49%2013.47%20109.53%2013.45C113.44%2013.45%20117.22%2015.05%20119.96%2017.84C122.64%2020.57%20124.08%2024.23%20123.99%2028.12V28.71L123.61%2029.17C121.28%2032.13%20118.82%2034.61%20116.1%2036.74%27%20fill=%27white%27%2F%3E%3Cpath%20d=%27M193.28%2020.41V4.34998H182.43V17.19C182.43%2025.22%20167.68%2027.52%20167.68%2027.52C167.68%2027.52%20152.93%2025.23%20152.93%2017.19V4.34998H142.07V19.99C142.07%2031.28%20162.26%2037.74%20162.26%2037.74V53.53H173.12V37.75C173.12%2037.75%20193.28%2031.71%20193.28%2020.42%27%20fill=%27white%27%2F%3E%3Cpath%20d=%27M358.81%2053.96V25.66C358.81%2013.97%20347.42%204.09998%20333.93%204.09998C320.44%204.09998%20308.57%2015.05%20308.57%2028.52C308.57%2041.1%20310.32%2047.17%20315.02%2050.92C320.21%2055.09%20328.33%2058.28%20345.16%2045.75L347.98%2043.65V53.97H358.81V53.96ZM340.51%2037.17C334.2%2041.96%20328.75%2044.81%20325.91%2044.81C322.9%2044.81%20320.69%2042.39%20320.14%2040.75C319.78%2039.91%20319.35%2037.7%20319.35%2028.41C319.35%2020.42%20325.89%2013.89%20333.92%2013.88C337.82%2013.88%20341.61%2015.48%20344.35%2018.27C347.03%2021%20348.47%2024.65%20348.39%2028.54V29.13L348.01%2029.6C346.51%2031.5%20344.1%2034.35%20340.5%2037.17%27%20fill=%27white%27%2F%3E%3Cpath%20d=%27M265.611%2049.92C269.491%2052.1%20274.351%2053.21%20280.061%2053.21C286.501%2053.21%20291.581%2051.89%20295.171%2049.3C298.761%2046.7%20300.581%2042.92%20300.581%2038.07C300.581%2037.1%20300.431%2036.13%20300.141%2035.19C299.851%2034.26%20299.491%2033.41%20299.091%2032.68C298.691%2031.95%20298.131%2031.23%20297.431%2030.54C296.731%2029.84%20296.081%2029.25%20295.501%2028.77C294.911%2028.28%20292.671%2026.73%20288.331%2025.12C287.311%2024.74%20286.571%2024.53%20286.121%2024.39C285.681%2024.25%20285.001%2024.04%20284.081%2023.76C283.471%2023.58%20282.741%2023.36%20282.601%2023.34H282.551C282.231%2023.26%20281.411%2023.04%20279.941%2022.66C278.481%2022.28%20274.361%2021.03%20273.331%2020.54C272.311%2020.06%20271.571%2019.48%20271.131%2018.82C270.691%2018.16%20270.471%2017.43%20270.471%2016.59C270.471%2015.06%20271.151%2013.85%20272.561%2012.91C273.951%2011.98%20275.951%2011.5%20278.511%2011.5C281.291%2011.5%20284.871%2012.11%20287.441%2013.36C290.001%2014.6%20291.701%2015.97%20292.501%2017.42L300.361%2012.72V12.7C298.961%209.93003%20296.451%207.56003%20292.901%205.65003C289.351%203.75003%20284.951%202.78003%20279.831%202.78003C274.051%202.78003%20269.231%204.01003%20265.491%206.43003C261.751%208.86003%20259.861%2012.44%20259.861%2017.09C259.861%2018.34%20260.081%2019.54%20260.521%2020.65C260.961%2021.76%20261.441%2022.73%20261.951%2023.52C262.461%2024.32%20263.261%2025.11%20264.331%2025.87C265.391%2026.63%20266.281%2027.24%20266.981%2027.69C267.681%2028.15%20268.691%2028.62%20270.071%2029.15C271.481%2029.69%20272.381%2030.02%20272.881%2030.19C273.401%2030.37%20274.261%2030.62%20275.531%2030.97L277.421%2031.49C277.791%2031.58%20279.081%2031.93%20280.101%2032.22C281.591%2032.63%20283.491%2033.27%20284.191%2033.52C284.891%2033.77%20285.761%2034.15%20286.781%2034.67C287.801%2035.19%20288.561%2035.78%20289.031%2036.44C289.511%2037.11%20289.741%2037.87%20289.741%2038.77C289.741%2042.56%20285.991%2044.18%20280.151%2044.18C276.931%2044.18%20273.911%2043.37%20271.171%2041.78C268.431%2040.19%20266.671%2038.47%20265.941%2036.68V36.66L257.641%2041.79V41.81C259.041%2045%20261.711%2047.72%20265.601%2049.9%27%20fill=%27white%27%2F%3E%3Cpath%20d=%27M249.709%2037.36H238.319C237.379%2039.51%20235.809%2041.24%20233.659%2042.51C231.479%2043.8%20228.989%2044.45%20226.269%2044.45C222.169%2044.45%20218.809%2043.25%20216.289%2040.9C213.769%2038.54%20212.259%2035.32%20211.799%2031.32L211.769%2031.08H250.679L250.769%2027.74C250.769%2020.42%20248.449%2014.26%20243.889%209.43998C239.329%204.61998%20233.269%202.16998%20225.879%202.16998C218.489%202.16998%20212.379%204.65998%20207.719%209.57998C203.059%2014.5%20200.689%2020.68%20200.689%2027.94C200.689%2035.2%20203.039%2041.63%20207.669%2046.49C212.299%2051.35%20218.459%2053.81%20225.979%2053.81C231.749%2053.81%20236.829%2052.26%20241.069%2049.2C245.229%2046.2%20248.139%2042.22%20249.709%2037.36ZM211.989%2022.83C212.589%2019.28%20214.129%2016.4%20216.589%2014.27C219.039%2012.14%20222.169%2011.06%20225.879%2011.06C229.589%2011.06%20232.779%2012.14%20235.169%2014.28C237.559%2016.41%20239.039%2019.29%20239.569%2022.84L239.609%2023.08H211.959L211.999%2022.83H211.989Z%27%20fill=%27white%27%2F%3E%3C%2Fsvg%3E ");
+}
+
+body {
+  margin: 0;
+}
+
+.container__animation {
+  width: 100%;
+  height: 100%;
+  background-color: #0000d0;
+}
+.container__animation .animation__scroll {
+  position: relative;
+  min-height: 100vh;
+}
+.container__animation .animation__scroll .background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: repeat-y;
+}
+.container__animation .animation__scroll .background--waves {
+  background: linear-gradient(0deg, #0000d0 0%, rgba(0, 0, 208, 0) 30.8%), url(./images/waves.webp);
+  background-size: cover;
+  background-repeat: no-repeat;
+  opacity: 0;
+  transform: scale(1.2);
+}
+.container__animation .animation__scroll .background--lineas--white {
+  background-image: url(./images/whites.svg);
+  height: 500vh;
+  background-size: contain;
+  background-position: 0% 0%;
+  opacity: 0;
+}
+.container__animation .animation__scroll .background--lineas--pink {
+  background-image: url(./images/pinks.svg);
+  height: 500vh;
+  background-size: contain;
+  background-position: 0% 0%;
+  opacity: 0;
+}
+.container__animation .animation__scroll .background--lineas--blur {
+  background-image: url(./images/blurred.svg);
+  height: 500vh;
+  background-size: contain;
+  background-position: 0% 0%;
+  opacity: 0;
+}
+.container__animation .animation__scroll .text-content {
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+.container__animation .animation__scroll .text-content .welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.container__animation .animation__scroll .text-content .welcome .say {
+  position: relative;
+  margin: 0;
+  font-family: "metropolis", "sans-serif";
+  font-weight: 700;
+  font-size: 58px;
+  letter-spacing: -2px;
+  color: #ff3180;
+}
+.container__animation .animation__scroll .text-content .welcome .title {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  color: #fff;
+}
+.container__animation .animation__scroll .text-content .welcome .title .container-hi {
+  display: flex;
+  align-items: flex-end;
+}
+.container__animation .animation__scroll .text-content .welcome .title .container-hi .hi {
+  display: flex;
+}
+.container__animation .animation__scroll .text-content .welcome .title .container-hi .hi .h,
+.container__animation .animation__scroll .text-content .welcome .title .container-hi .hi .i {
+  position: relative;
+  display: inline-block;
+  width: 136px;
+  height: 180px;
+  overflow: hidden;
+  text-indent: -100000000px;
+}
+.container__animation .animation__scroll .text-content .welcome .title .container-hi .hi .h {
+  background: var(--svg-letter-h) no-repeat center;
+}
+.container__animation .animation__scroll .text-content .welcome .title .container-hi .hi .i {
+  background: var(--svg-letter-i) no-repeat center;
+  margin-left: -30px;
+  margin-right: -25px;
+}
+.container__animation .animation__scroll .text-content .welcome .title .container-hi .barra-container {
+  width: 122px;
+  position: relative;
+}
+.container__animation .animation__scroll .text-content .welcome .title .container-hi .barra-container .barra {
+  display: inline-block;
+  width: 122px;
+  height: 36px;
+  margin-bottom: -37px;
+  background: #fff;
+}
+.container__animation .animation__scroll .text-content .welcome .title .name {
+  font-size: 100px;
+  font-family: "metropolis", "sans-serif";
+  line-height: 0.75;
+}
+.container__animation .animation__scroll .text-content .text {
+  position: absolute;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  opacity: 0;
+  color: #fff;
+  font-size: 40px;
+  height: 0;
+  overflow: hidden;
+  font-family: "metropolis", "sans-serif";
+}
+.container__animation .animation__scroll .text-content .text span {
+  color: #ff3180;
+}
+.container__animation .animation__scroll .text-content .text--9 {
+  font-size: 130px;
+  font-weight: 700;
+  transform: scale(0.5);
+}
+.container__animation .animation__scroll .text-content .text--10 {
+  opacity: 1;
+}
+.container__animation .animation__scroll .text-content .text--14 {
+  font-size: 130px;
+  font-weight: 700;
+  color: #ff3180;
+  text-transform: uppercase;
+}
+.container__animation .animation__scroll .text-content .text--20 {
+  font-size: 130px;
+  font-weight: 700;
+}
+.container__animation .animation__scroll .text-content .cuadro-rosa {
+  background: #ff3180;
+  width: 0;
+  height: 0;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.container__animation .animation__scroll .text-content .rosse-symbol {
+  content: var(--svg-rosse-symbol);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100vh;
+  width: 100%;
+  opacity: 0;
+}
+.container__animation .animation__scroll .text-content .rosse-symbol-2 {
+  content: var(--svg-rosse-symbol);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-height: 100vh;
+  width: 100%;
+  opacity: 0;
+}
+.container__animation .animation__scroll .text-content .ayesa-logo {
+  content: var(--svg-ayesa-logo);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  max-width: 358px;
+  width: 100%;
+  opacity: 0;
+  overflow: hidden;
+  text-indent: -100000000px;
+}
+.container__animation .steps .step {
+  pointer-events: none;
+  position: relative;
+  min-height: 100vh;
+}
+.container__animation .steps .step.step0 {
+  min-height: 100vh;
+}
+
+@keyframes bounce-1 {
+  0% {
+    transform: translate(-50%, 0); }
+  50% {
+    transform: translate(-50%, -8px); }
+  100% {
+    transform: translate(-50%, 0); } 
+  
+}
+
+.container__animation .animation__scroll .arrow-scroll{
+    display: block;
+    width: 26px;
+    height: 26px;
+    text-align: center;
+    background: url(./images/arrow-scroll.png) no-repeat;
+    position: fixed;
+    bottom: 26px;
+    left: 50%;
+    z-index: 10;
+    cursor: auto;
+    animation-name: bounce-1;
+    animation-timing-function: linear;
+    animation-duration: 1.2s;
+    animation-iteration-count: infinite;
+}
+
+@media (width < 1200px) {
+  .container__animation .animation__scroll .text-content .welcome .title .name {
+    font-size: 80px;
+  }
+}
+@media (width < 992px) {
+  .container__animation .animation__scroll .text-content .welcome {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  .container__animation .animation__scroll .text-content .welcome .say {
+    font-size: 48px;
+  }
+  .container__animation .animation__scroll .text-content .welcome .title {
+    grid-row-gap: 40px;
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  .container__animation .animation__scroll .text-content .welcome .title .container-hi {
+    display: flex;
+    align-items: flex-end;
+  }
+  .container__animation .animation__scroll .text-content .welcome .title .container-hi .hi .h,
+  .container__animation .animation__scroll .text-content .welcome .title .container-hi .hi .i {
+    width: 120px;
+    height: 158px;
+  }
+  .container__animation .animation__scroll .text-content .welcome .title .container-hi .hi .i {
+    background: var(--svg-letter-i) no-repeat center;
+    margin-left: -30px;
+    margin-right: -25px;
+  }
+  .container__animation .animation__scroll .text-content .welcome .title .container-hi .barra-container .barra {
+    height: 24px;
+    margin-bottom: -27px;
+  }
+  .container__animation .animation__scroll .text-content .welcome .title .name {
+    font-size: 74px;
+  }
+  .container__animation .animation__scroll .text-content .text--9 {
+    font-size: max(13vw, 45px);
+  }
+  .container__animation .animation__scroll .text-content .text--14 {
+    font-size: max(13vw, 35px);
+  }
+  .body-en .container__animation .animation__scroll .text-content .text--20 {
+    font-size: 100px;
+  }
+}
+@media (width < 768px) {
+  .container__animation {
+    width: 100%;
+    height: 100%;
+    background-color: #0000d0;
+  }
+  .container__animation .animation__scroll {
+    position: relative;
+    min-height: 100vh;
+  }
+  .container__animation .animation__scroll .background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+  }
+  .container__animation .animation__scroll .background--waves {
+    background: linear-gradient(0deg, #0000d0 0%, rgba(0, 0, 208, 0) 30.8%), url(./images/waves.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transform: scale(1.2);
+  }
+  .container__animation .animation__scroll .text-content .text--9 {
+    font-size: max(20vw, 45px);
+  }
+  .body-en  .container__animation .animation__scroll .text-content .text--9 {
+    font-size: max(25vw, 45px);
+  }
+  .container__animation .animation__scroll .text-content .welcome .title .name {
+    font-size: max(12vw, 42px);
+  }
+  .container__animation .animation__scroll .text-content .text--20, 
+  .body-en .container__animation .animation__scroll .text-content .text--20 {
+    font-size: max(15vw, 35px);
+  }
+  .container__animation .animation__scroll .text-content .ayesa-logo {
+    max-width: 280px;
+  }
+}
